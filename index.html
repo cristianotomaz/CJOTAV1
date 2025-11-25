@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Define o conjunto de caracteres para UTF-8, o padrão da web. -->
+    <meta charset="UTF-8" />
+    <!-- Configura a viewport para que o jogo se ajuste bem em dispositivos móveis. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- O título que aparece na aba do navegador. -->
+    <title>Instituto do Terror</title>
+    <!-- Bloco de estilos CSS para formatar a página. -->
+    <style>
+      /* Remove margens e preenchimentos padrão do navegador e define um fundo escuro. */
+      html, body { margin: 0; padding: 0; background: #0b0f12; height: 100%; }
+      /* Estiliza o contêiner do jogo para ocupar a tela inteira e centralizar seu conteúdo. */
+      #game-container { width: 100%; height: 100%; display:flex; align-items:center; justify-content:center; }
+      /* 
+        'image-rendering: pixelated' é um estilo crucial para jogos com pixel art.
+        Ele impede que o navegador borre ou suavize os pixels quando a tela do jogo é redimensionada,
+        mantendo o visual nítido e "retrô".
+      */
+      canvas { image-rendering: pixelated; }
+    </style>
+  </head>
+  <body>
+    <!-- 
+      Esta é a div onde o Phaser irá injetar o elemento <canvas> do jogo.
+      O ID 'game-container' corresponde à propriedade 'parent' no arquivo main.js.
+    -->
+    <div id="game-container"></div>
+    <!-- Carrega o arquivo JavaScript principal do jogo. -->
+    <!-- 'type="module"' é usado para permitir a sintaxe de import/export do JavaScript moderno (ESM). -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
